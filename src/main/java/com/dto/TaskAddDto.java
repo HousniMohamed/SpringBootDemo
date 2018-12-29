@@ -5,8 +5,12 @@ import javax.validation.constraints.Size;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @ApiModel(value = "TaskAddDto", description = "user task")
+@Data
+@NoArgsConstructor
 public class TaskAddDto {
 
 	@NotNull
@@ -16,25 +20,5 @@ public class TaskAddDto {
 	@NotNull
 	@ApiModelProperty(value = "inidcate if the task was completed or not", required = true)
 	private Boolean completed;
-
-	public TaskAddDto() {
-		super();
-	}
-
-	public String getDescription() {
-		return description;
-	}
-
-	public void setDescription(String description) {
-		this.description = description;
-	}
-
-	public Boolean getCompleted() {
-		return completed;
-	}
-
-	public void setCompleted(Boolean completed) {
-		this.completed = completed;
-	}
 
 }
